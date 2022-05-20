@@ -4,9 +4,8 @@ import reducer from './reducer';
 const AppContext = React.createContext();
 
 const initialState = {
-    data: null,
+    data: {},
     loading: true,
-    needData:false
 }
 
 
@@ -38,7 +37,7 @@ const AppProvider = ({children})=>{
     // })
 
 
-      const fetchPaintingsData = ()=>{
+      const fetchPaintingsData = async ()=>{
                client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
                    setGetPaintings(entry.fields)
            }).catch((error)=> console.log(error))
@@ -51,21 +50,18 @@ const AppProvider = ({children})=>{
 
      useEffect(()=>{
         if(getPaintings===null){
+            fetchPaintingsData()
             return
         }else{
             dispatch({type:'SET_DATA', payload:getPaintings})  
         }
-
      },[getPaintings])
 
     console.log(state);
 
     return (<AppContext.Provider value={{
-        ...getPaintings,
         ...state,
         fetchPaintingsData,
-        contentful, 
-        client
     }}>
         {children}
     </AppContext.Provider>

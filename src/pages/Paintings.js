@@ -1,27 +1,30 @@
 import React, {useState} from 'react'
+import PaintingsDisplay from '../components/PaintingsDisplay'
 import {useGlobalContext} from '../context'
 
-function Paintings() {
-  const {paintings, paintingsImages, loading, contentful, client, data, fetchPaintingsData} = useGlobalContext()
+function Paintings(){
+  // const {loading, data, fetchPaintingsData} = useGlobalContext()
 
-  if(paintings === null || paintingsImages === null){
-    console.log(loading)
-    console.log('empty')
-    fetchPaintingsData()
-  }
+  // const {paintings, paintingsImages} = data
 
-  const {id, title, materials, dimensions, description} = paintings[0]
-  const {url} = paintingsImages[0].fields.file
+  // if(paintings === null || paintingsImages === null){
+  //   console.log(loading)
+  //   console.log('empty')
+  //   fetchPaintingsData()
+  // }
+
+  // const {id, title, materials, dimensions, description} = paintings[0]
+  // const {url} = paintingsImages[0].fields.file
 
   return (
     <>
-      <h3>Paintings</h3>
+      {/* <h3>Paintings</h3>
       {loading? <h5>loading</h5> : <section>
         
         <p>{title}, {materials} </p>
         <img src={url} alt='imafdeaez'/>
-      </section>}
-      
+      </section>} */}
+      <PaintingsDisplay/>
     </>
     
   )
