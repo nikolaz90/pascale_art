@@ -13,7 +13,7 @@ const AppProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
 
     //const url = 'https://cdn.contentful.com/spaces/fol21n7kmioh/environments/master/entries/5T41dzp3uIEUuPUsiZ2FRt?access_token=TDsrblmAYdyKYQ3eVkj86wdC_peFyZvI9q9kyi-QYuQ'
-    //const contenfulKey = process.env.REACT_APP_ACCESS_KEY
+    const contenfulKey = process.env.REACT_APP_ACCESS_KEY
 
     const [getPaintings, setGetPaintings] = useState(null)
 
@@ -21,7 +21,7 @@ const AppProvider = ({children})=>{
      const contentful = require('contentful')
      const client = contentful.createClient({
          space: 'fol21n7kmioh',
-         accessToken: "TDsrblmAYdyKYQ3eVkj86wdC_peFyZvI9q9kyi-QYuQ"
+         accessToken: `${contenfulKey}`
      })
 
       //client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){

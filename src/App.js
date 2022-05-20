@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {ErrorBoundary} from 'react-error-boundary'
 
 //pages
 import Home from './pages/Home'
@@ -15,10 +16,16 @@ import Error from './pages/Error'
 //components
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Fallback from './components/FallBack'
+
+const handleError = (error, errorInfo)=>{
+  console.log('Logging error : ', error, errorInfo)
+}
 
 function App() { 
   return (
     <Router>
+      <ErrorBoundary FallbackComponent={Fallback} onError={handleError}>
         <Navbar/>
         <Routes>
             <Route path='/' element={<Home/>} />
@@ -32,6 +39,9 @@ function App() {
             <Route path='/*' element={<Error/>}/>
         </Routes>
         <Footer/>
+      </ErrorBoundary>
+        
+
     </Router>
   )
 }
