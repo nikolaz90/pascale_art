@@ -1,18 +1,18 @@
 import React from 'react'
 import {useGlobalContext} from '../context'
 
-function PaintingsDisplay() {
+function PrintsDisplay() {
 const {loading, data} = useGlobalContext()
-const {paintings, paintingsImages} = data
+const {prints, printsImages} = data
 
 
 return (
     <>
         {loading ? <h5 className='loading'>LOADING ...</h5> : <div className='paintings-articles-container'>{
-            paintings.map((item, index) => {
+            prints.map((item, index) => {
                 return (
                 <article key={index} className='painting-article'>
-                    <img className='painting-article-img' src={paintingsImages[index].fields.file.url} alt={item.title}/>
+                    <img className='painting-article-img' src={printsImages[index].fields.file.url} alt={item.title}/>
                     <h5>{item.title}</h5>
                     <p><small>{item.dimensions}</small></p>
                 </article> )
@@ -23,4 +23,4 @@ return (
   )
 }
 
-export default PaintingsDisplay
+export default PrintsDisplay

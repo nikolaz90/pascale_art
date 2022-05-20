@@ -37,7 +37,7 @@ const AppProvider = ({children})=>{
     // })
 
 
-      const fetchPaintingsData = async ()=>{
+      const fetchPaintingsData = ()=>{
                client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
                    setGetPaintings(entry.fields)
            }).catch((error)=> console.log(error))
