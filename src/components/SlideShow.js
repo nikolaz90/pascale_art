@@ -27,14 +27,13 @@ function SlideShow() {
   return (
     <>
       <div className='slide-show'>
-        <img className='slide-show-img' alt='slide show of paintings by Pascale Stacey' src={slideSource}/>
-        
-    </div>
-    <div className='arrows'>
+        <img className='slide-show-img' alt='slide show of paintings by Pascale Stacey' src={slideSource}/> 
+      </div>
+      <div className='arrows'>
           <span onClick={()=>handleSlideShow(-1)}><img className='arrow left' alt='previous' src={left}/></span>
           <span onClick={()=>handleSlideShow(1)}><img className='arrow right' alt='next' src={right}/></span>
-    </div>
-    <p>"{title}" <small>{materials}</small></p>
+      </div>
+      <p>"{title}" <small>{materials}</small></p>
     </>
   )
 }

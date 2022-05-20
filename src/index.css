@@ -22,6 +22,12 @@ a{
     color: var(--primary-color);
 }
 
+button{
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
 /*nav*/
 .navbar{
     display: flex;
@@ -204,6 +210,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
 }
 
 .overview-img{
@@ -214,9 +221,15 @@ a{
 .overview-article{
     display: flex;
     flex-direction: row;
+    justify-content:center;
 }
 
 .overview-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
     animation: fade-in-img 0.3s;
 }
 
@@ -227,6 +240,61 @@ a{
 .more-details:hover{
     width: 35px;
 } 
+
+.toggle-details-btn{
+    color: var(--primary-color);
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: 150px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle-details-btn::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    border: 1px solid rgb(0, 0, 0);
+    height: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.toggle-details-btn::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0px;
+    border: 1px solid rgb(0, 0, 0);
+    height: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.toggle-details-btn:hover{
+    box-shadow: 0 0 0 28px rgba(0, 0, 0, 0.774) inset;
+    border-color: rgb(0, 0, 0);
+    color: white;
+}
+.toggle-details-btn:hover::after{
+    border-color: transparent;
+    right: -2px;
+}
+.toggle-details-btn:hover::before{
+    border-color: transparent;
+    left: -2px;
+}
+
+@media (max-width:1000px) {
+    .overview-img{
+        height: 300px;
+        width: 350px;
+    }
+    
+}
 
 @media (max-width: 700px) {
     .overview-article{

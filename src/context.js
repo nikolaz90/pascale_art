@@ -1,21 +1,75 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect, useReducer} from 'react'
+import reducer from './reducer';
 
 const AppContext = React.createContext();
 
+const initialState = {
+    data: null,
+    loading: true,
+    needData:false
+}
+
 
 const AppProvider = ({children})=>{
-    const [loading, setLoading] = useState(false)
+    const [state, dispatch] = useReducer(reducer, initialState)
+
+    //const url = 'https://cdn.contentful.com/spaces/fol21n7kmioh/environments/master/entries/5T41dzp3uIEUuPUsiZ2FRt?access_token=TDsrblmAYdyKYQ3eVkj86wdC_peFyZvI9q9kyi-QYuQ'
+    //const contenfulKey = process.env.REACT_APP_ACCESS_KEY
+
+    const [getPaintings, setGetPaintings] = useState(null)
 
 
+     const contentful = require('contentful')
+     const client = contentful.createClient({
+         space: 'fol21n7kmioh',
+         accessToken: "TDsrblmAYdyKYQ3eVkj86wdC_peFyZvI9q9kyi-QYuQ"
+     })
+
+      //client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
+          //console.log(entry.fields);
+      //})
+
+    // client.getEntries().then(function(entries){
+    //     entries.items.forEach(function (entry){
+    //         if(entry.fields.paintingsImages){
+    //             //console.log(entry.fields.paintingsImages[1].fields.file.url);
+    //         }
+    //     })
+    // })
 
 
+      const fetchPaintingsData = ()=>{
+               client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
+                   setGetPaintings(entry.fields)
+           }).catch((error)=> console.log(error))
+      }
 
-    return <AppContext.Provider value={{
-        loading,
+
+     useEffect(() => {
+         fetchPaintingsData()
+     }, [])
+
+     useEffect(()=>{
+        if(getPaintings===null){
+            return
+        }else{
+            dispatch({type:'SET_DATA', payload:getPaintings})  
+        }
+
+     },[getPaintings])
+
+    console.log(state);
+
+    return (<AppContext.Provider value={{
+        ...getPaintings,
+        ...state,
+        fetchPaintingsData,
+        contentful, 
+        client
     }}>
         {children}
     </AppContext.Provider>
-}
+)}
 
 export const useGlobalContext = ()=>{
     return useContext(AppContext)

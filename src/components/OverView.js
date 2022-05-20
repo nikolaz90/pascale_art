@@ -37,11 +37,14 @@ function OverView() {
                             <p>description:</p>
                             <p><em>{description}</em> </p>
                             <p><small>{dimensions}</small></p>
+                            <button className='toggle-details-btn' onClick={()=>handleMoreInfo(index)}>Less</button>
                         </div> : 
                             <div className='overview-details'>
                                 <h3>{title}</h3>
                                 <p>{materials}</p>
+                                <button className='toggle-details-btn' onClick={()=>handleMoreInfo(index)}>More</button>
                             </div> 
+                            
                     }
                 </article>
             )
