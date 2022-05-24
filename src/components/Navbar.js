@@ -1,15 +1,10 @@
-import React, {useState, useEffect, useRef} from 'react'
-import {useGlobalContext} from '../context'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const {loading} = useGlobalContext()
-  const [isHamburgerChecked, setIsHamburgerChecked] = useState(false)
-
   const overlay = useRef(null)
 
   const handleCheck = ()=>{
-    // setIsHamburgerChecked((oldState)=> !oldState)
     overlay.current.classList.toggle('overlay-activated')
   }
 
@@ -21,7 +16,7 @@ function Navbar() {
     <>
     <nav className='navbar'>
       <div className='title-container'>
-        <Link to='/'><h1 className='nav-title'>Pascale Stacey . Art</h1></Link>
+        <Link to='/'><h1 className='nav-title'>Pascale Stacey Art</h1></Link>
           <input id='hamburger-checkbox' type='checkbox'/>
           <label className='hamburger' onClick={handleCheck} htmlFor='hamburger-checkbox'>
             <div className='hamburger-line'></div>

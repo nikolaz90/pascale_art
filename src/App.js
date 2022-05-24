@@ -12,6 +12,7 @@ import About from './pages/About'
 import Testimonials from './pages/Testimonials'
 import Contact from './pages/Contact'
 import Error from './pages/Error'
+import SingleItemPage from './pages/SingleItemPage'
 
 //components
 import Navbar from './components/Navbar'
@@ -36,6 +37,7 @@ function App() {
             <Route path='/about' element={<About/>}/>
             <Route path='/testimonials' element={<Testimonials/>}/>
             <Route path='/contact' element={<Contact/>}/>
+            <Route path='/singleitempage:id' element={<SingleItemPage/>}/>
             <Route path='/*' element={<Error/>}/>
         </Routes>
         <Footer/>

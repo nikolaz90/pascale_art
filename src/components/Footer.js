@@ -1,5 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import  email  from '../photos/logos/envelope-solid.svg'
 import instagram from '../photos/logos/instagram-brands.svg'
 
@@ -9,8 +8,8 @@ function Footer() {
       <p>Pascale Stacey</p>
       <p><small>COPYRIGHT 2022</small></p>
       <div>
-        <a href='#'><img src={email} alt='email me' className='footer-icon'/></a>
-        <a href='#'><img src={instagram} alt='follow me on instagram' className='footer-icon'/></a>
+        <a href='mailto:nikolaz.90@laposte.net'><img src={email} alt='email me' className='footer-icon'/></a>
+        <a target='_blank' rel='noreferrer' href='https://www.instagram.com/pascalestacey/'><img src={instagram} alt='follow me on instagram' className='footer-icon'/></a>
       </div>
       
     </section>

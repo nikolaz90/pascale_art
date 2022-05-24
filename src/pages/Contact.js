@@ -1,18 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const handleSubmit = (e)=>{
-  e.preventDefault()
-  console.log(e.target.contactEmail.value + ' sent and email with the following subject ' + e.target.contactSubject.value + ' and this message ' + e.target.contactMessage.value);
-}
+
 
 function Contact() {
+  const [isSent, setIsSent] = useState(false)
+
+  const handleSubmit = (e)=>{
+    //e.preventDefault()
+    console.log('You have sent the following email sucessfully : subject ' + e.target.contactSubject.value + ', message : ' + e.target.contactMessage.value)
+    setIsSent(true)
+    toggleIsSent()
+  }
+
+  const toggleIsSent = ()=>{
+    setTimeout(()=>{
+      setIsSent(false)
+    }, 10000)  
+  }
+
+
+
   return (
     <section>
-      <form className='contact-form' onSubmit={handleSubmit}>
-        <input className='form-input' id='contactEmail' type='text' placeholder='your.email@address.com' required/>
-        <input className='form-input' id='contactSubject' type='text' placeholder='subject' required/>
-        <textarea className='form-input form-message' id='contactMessage' type='text' placeholder='your message here.' required/>
+      <form className='contact-form' onSubmit={handleSubmit} action='https://formsubmit.co/a4a24ec97848babda9703381c889c4b6' target='_blank' method='POST'>
+        <input className='form-input' id='contactEmail' type='text' name='email' placeholder='your.email@address.com' required/>
+        <input className='form-input' id='contactSubject' type='text' name='subject' placeholder='subject' required/>
+        <textarea className='form-input form-message' id='contactMessage' type='text' name='message' placeholder='your message here.' required/>
         <button type='submit' className='toggle-details-btn'>Send</button>
+        {isSent && <span><small>message sent!</small></span>} 
       </form>
     </section>
   )

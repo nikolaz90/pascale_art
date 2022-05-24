@@ -1,5 +1,6 @@
 import React from 'react'
 import {useGlobalContext} from '../context'
+import {Link} from 'react-router-dom'
 
 function PaintingsDisplay() {
 const {loading, data} = useGlobalContext()
@@ -15,6 +16,7 @@ return (
                     <img className='painting-article-img' src={paintingsImages[index].fields.file.url} alt={item.title}/>
                     <h5>{item.title}</h5>
                     <p><small>{item.dimensions}</small></p>
+                    <Link to={`/singleitempage${item.id}`}><button className='toggle-details-btn'>More</button></Link>
                 </article> )
             })}
         </div>}
