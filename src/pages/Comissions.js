@@ -30,7 +30,7 @@ function Comissions() {
           <img src={flowerImage} alt='details of a painting of a flower' className='comissions-flower-img'/>
           <p className='comissions-info-para'>
             I have just returned from Umbria in Italy where I painted two murals in a restored tower as the artist in residence.  
-            The flower {currWidth > 1100 ? 'on the left':'above'} is a detail of the work in one of the rooms.
+            The flower {currWidth > 900 ? 'shown here':'above'} is a detail of the work in one of the rooms.
             If you'd like to talk through some ideas for your own screen or  mural, please send me your contact details using the form below.
             I look forward to hearing from you!   
           </p>
