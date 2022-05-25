@@ -3,7 +3,7 @@ import screenImage from '../photos/comissions/img1.jpg'
 import flowerImage from '../photos/comissions/img2.jpg'
 
 function Comissions() {
-  const [currWidth, setCurrWidth] = useState(null)
+  const [currWidth, setCurrWidth] = useState(document.documentElement.clientWidth)
   window.addEventListener('resize', getWidth)
   
   function getWidth (){
