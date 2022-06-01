@@ -35,6 +35,8 @@ const AppProvider = ({children})=>{
     //     })
     // })
 
+    //'5T41dzp3uIEUuPUsiZ2FRt'
+    //'1dY7DHcazeHmHhyNQf26uz'
 
       const fetchPaintingsData = ()=>{
                client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
@@ -56,7 +58,7 @@ const AppProvider = ({children})=>{
         }
      },[getPaintings])
 
-    console.log(state);
+    //console.log(state);
 
     return (<AppContext.Provider value={{
         ...state,

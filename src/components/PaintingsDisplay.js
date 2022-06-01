@@ -1,27 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useGlobalContext} from '../context'
-import {Link} from 'react-router-dom'
+import PaintingsSubDisplay from './PaintingsSubDisplay'
 
 function PaintingsDisplay() {
-const {loading, data} = useGlobalContext()
-const {paintings, paintingsImages} = data
+ const [isActive, setIsActive] = useState(0)
 
+ const {loading, data} = useGlobalContext()
+ const {paintings = [{reflections:[],isolations:[],perceptions:[]}]} = data
+ const {reflections, isolations, perceptions} = paintings[0]
+
+ const handleClickActive = (displayNum)=>{
+    setIsActive(displayNum)
+ }
 
 return (
-    <>
-        {loading ? <h5 className='loading'>LOADING ...</h5> : <div className='paintings-articles-container'>{
-            paintings.map((item, index) => {
-                return (
-                <article key={index} className='painting-article'>
-                    <img className='painting-article-img' src={paintingsImages[index].fields.file.url} alt={item.title}/>
-                    <h5>{item.title}</h5>
-                    <p><small>{item.dimensions}</small></p>
-                    <Link to={`/singleitempage${item.id}`}><button className='toggle-details-btn'>More</button></Link>
-                </article> )
-            })}
-        </div>}
-        
-    </>
+        <>
+            <div className='sub-display-menu'>
+                <span onClick={()=>handleClickActive(0)} className={`display-menu-btn ${isActive === 0 && 'active-menu-btn'}`}>Reflections</span> 
+                <span onClick={()=>handleClickActive(1)} className={`display-menu-btn ${isActive === 1 && 'active-menu-btn'}`}>Isolations</span> 
+                <span onClick={()=>handleClickActive(2)} className={`display-menu-btn ${isActive === 2 && 'active-menu-btn'}`}>Perceptions</span>
+            </div>
+            {isActive === 0 && <div>
+                    {loading ? <h5 className='loading'>LOADING ...</h5> : <PaintingsSubDisplay subDisplayData={reflections}/>}
+                </div>}
+            {isActive === 1 && <div>
+                    {loading ? <h5 className='loading'>LOADING ...</h5> : <PaintingsSubDisplay subDisplayData={isolations}/>}
+                </div>}
+            {isActive === 2 && <div>
+                    {loading ? <h5 className='loading'>LOADING ...</h5> : <PaintingsSubDisplay subDisplayData={perceptions}/>}
+                </div>}           
+        </>
   )
 }
 

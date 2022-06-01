@@ -1,13 +1,16 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import {useGlobalContext} from '../context'
+import noImageLogo from '../photos/logos/No_image_available.svg.png'
 
 function SingleItemPage() {
   const {id} = useParams()
   const {loading, data} = useGlobalContext()
-  const {paintings, screens, prints} = data
+  const {paintings = [{reflections:[],isolations:[],perceptions:[]}], screens, prints} = data 
+  //const {paintingsV2json} = paintings
+  const {reflections, isolations, perceptions} = paintings[0]
 
-  const allArtwork = [...paintings || [], ...screens || [], ...prints || []]
+  const allArtwork = [...reflections || [], ...isolations || [], ...perceptions || [], ...screens || [], ...prints || []]
 
   console.log(allArtwork);
 
@@ -16,7 +19,7 @@ function SingleItemPage() {
   return (
     <section>
       {loading ? <h5 className='loading'>LOADING... {id}</h5> : <article className='single-artwork-container'>
-        <img className='single-artwork-img' src={allArtwork[id-1].imgUrl} alt={allArtwork[id-1].title}/>
+        <img className='single-artwork-img' src={allArtwork[id-1].imgUrl === "" ? noImageLogo : allArtwork[id-1].imgUrl} alt={allArtwork[id-1].title}/>
         <div className='single-artwork-info'>
           <h2>{allArtwork[id-1].title}</h2>
           <p><small>{allArtwork[id-1].materials + ' - ' + allArtwork[id-1].dimensions}</small></p>

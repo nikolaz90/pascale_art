@@ -335,6 +335,26 @@ button{
     text-align: center;
 }
 
+.sub-display-menu{
+    text-align: center;
+}
+
+.display-menu-btn{
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 15px;
+    display: inline-block;
+    border-bottom: 1px rgb(255, 255, 255) solid;
+    margin: 10px;
+}
+.display-menu-btn:hover{
+    border-bottom: 1px rgb(165, 165, 165) solid;
+}
+.active-menu-btn{
+    transform: scale(1.2);
+    border-bottom: 1px black solid;
+}
+
 .paintings-articles-container{
     display: flex;
     flex-direction: row;
@@ -432,7 +452,7 @@ button{
     justify-content: center;
 }
 .comissions-info-para{
-    width: 35ch;
+    width: 36ch;
     text-align: center;
     box-shadow: 0px 0px 10px rgb(227, 227, 227);
     margin: 50px;
@@ -441,6 +461,10 @@ button{
 .comissions-flower-img{
     width: 75%;
     max-width: 600px;
+}
+
+.comission-contact-link{
+    color: rgb(43, 87, 152);
 }
 
 @media (max-width:750px) {
