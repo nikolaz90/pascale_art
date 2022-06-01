@@ -10,14 +10,14 @@ import img7 from '../photos/details/img7.jpg'
 function About() {
   return (
     <section className='section about-section text-container'>
-      <h4 className='page-title'>The artist</h4>
+      <h2 className='page-title'>The artist</h2>
       <p>
         Pascale Stacey is an Anglo-French artist, currently based in Britain, working out of a beautifully lit studio in rural Wiltshire. 
         She received a private art education in Brittany and has shown her work in Drogheda, London, and Reading. 
         She has exhibited her work over the last few years with the Marlborough Open Studios (see www.marlboroughopenstudios.co.uk) 
         and works mainly on commissions in the UK and abroad.  
       </p>
-      <h4 className='page-title'>The process</h4>
+      <h2 className='page-title'>The process</h2>
       <p>
         Every piece is an individually thought-out and utterly unique proposition.
         For my screens, I have a close working relationship with a local craftsman, who shapes panels and frames to precise  specifications. 

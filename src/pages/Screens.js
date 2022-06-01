@@ -3,10 +3,10 @@ import ScreensDiplay from '../components/ScreensDisplay'
 
 function Screens() {
   return (
-    <div>
-      <h4 className='page-title'>Screens</h4>
+    <section className='screens-section text-container section'>
+      <h2 className='page-title'>Screens</h2>
       <ScreensDiplay/>
-    </div>
+    </section>
   )
 }
 

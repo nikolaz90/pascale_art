@@ -1,35 +1,30 @@
-import React, {useEffect, useState} from 'react'
-import {paintings} from '../data/mockData/data'
-import image1 from '../photos/paintings/img1.jpg'
-import image2 from '../photos/prints/img1.jpg'
-import image3 from '../photos/screens/img1.jpg'
+import React, { useState } from 'react'
 import right from '../photos/logos/rightarrow.svg'
-
-const articlePhotos = [image1, image2, image3]
-
-
+import { useGlobalContext } from '../context'
 
 function OverView() {
+    const {loading, data} = useGlobalContext()
+    const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = data
+    const {reflections, isolations, perceptions} = paintings[0]
+    
+    const overviewPaintings = [...isolations.slice(-2),...reflections.slice(0,2),...perceptions.slice(-2)]
+
     const [isMoreActive, setIsMoreActive] = useState(null);
 
     const handleMoreInfo = (index)=>{
         if(index === isMoreActive){
             return setIsMoreActive(null)
         }
-        //console.log(paintings[index].description)
         setIsMoreActive(index)
     }
 
-
-
-
   return (
     <div className='overview-container'>
-        {paintings.map((item, index)=>{
-            const {id, title, description, dimensions, materials} = item
+        {loading ? <h4>Loading...</h4> : overviewPaintings.map((item, index)=>{
+            const {id, title, description, dimensions, materials, imgUrl} = item
             return (
                 <article className='overview-article' key={id}>
-                    <img className='overview-img' src={articlePhotos[index]} alt={title} />
+                    <img className='overview-img' src={imgUrl} alt={title} />
                     <img className='arrow more-details' src={right} alt='more details' style={{transform:`${isMoreActive===index? 'rotate(540deg)':''}`}} onClick={()=>handleMoreInfo(index)} />
                     {
                         isMoreActive === index ? 
@@ -44,13 +39,10 @@ function OverView() {
                                 <p>{materials}</p>
                                 <button className='toggle-details-btn' onClick={()=>handleMoreInfo(index)}>More</button>
                             </div> 
-                            
                     }
                 </article>
             )
         })}
-
-
     </div>
   )
 }

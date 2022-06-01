@@ -12,10 +12,8 @@ function Comissions() {
   }
 
   return (
-    <section className='section comissions-section'>
-      
-      <div className='text-container'>
-        <h4 className='page-title'>Comissions</h4>
+    <section className='section comissions-section text-container'>
+        <h2 className='page-title'>Comissions</h2>
         <p>
           Comissioned work is always an eye opening experience as I incorporate your requirements, desires and requests into the artwork.
           Would you like something totally unique, or more of what you know you already like? I am more than happy to share ideas and discuss whatever it 
@@ -36,7 +34,6 @@ function Comissions() {
             I look forward to hearing from you!   
           </p>
         </div>
-      </div>
     </section>
   )
 }

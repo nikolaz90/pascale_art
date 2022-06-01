@@ -6,15 +6,11 @@ import noImageLogo from '../photos/logos/No_image_available.svg.png'
 function SingleItemPage() {
   const {id} = useParams()
   const {loading, data} = useGlobalContext()
+
   const {paintings = [{reflections:[],isolations:[],perceptions:[]}], screens, prints} = data 
-  //const {paintingsV2json} = paintings
   const {reflections, isolations, perceptions} = paintings[0]
 
   const allArtwork = [...reflections || [], ...isolations || [], ...perceptions || [], ...screens || [], ...prints || []]
-
-  console.log(allArtwork);
-
-
 
   return (
     <section>
@@ -25,11 +21,7 @@ function SingleItemPage() {
           <p><small>{allArtwork[id-1].materials + ' - ' + allArtwork[id-1].dimensions}</small></p>
           <p>{allArtwork[id-1].description}</p>
         </div>
-        
       </article>}
-        
-
-      
     </section>
   )
 }

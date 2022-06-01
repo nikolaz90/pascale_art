@@ -1,23 +1,24 @@
 import React, {useState} from 'react'
-import {paintings} from '../data/mockData/data'
-import image1 from '../photos/paintings/img1.jpg'
-import image2 from '../photos/paintings/img2.jpg'
-import image3 from '../photos/paintings/img3.jpg'
 import left from '../photos/logos/leftarrow.svg'
 import right from '../photos/logos/rightarrow.svg'
+import {useGlobalContext} from '../context'
 
 function SlideShow() {
-    const slideShow = [image1, image2, image3]
+    const {loading, data} = useGlobalContext()
+    const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = data
+    const {reflections, isolations, perceptions} = paintings[0]
+    const slideShowPhotos = [...reflections.slice(3,4),...isolations.slice(-2),...perceptions.slice(-3)]
+    const length = slideShowPhotos.length - 1
+
     const [slideImage, setSlideImage] = useState(0)
-    const slideSource = slideShow[slideImage]
-    const {materials, title} = paintings[slideImage]
+    const slideSource = slideShowPhotos[slideImage]
 
     const handleSlideShow = (num)=>{
       let check = slideImage + num;
       if(check < 0){
-        setSlideImage(2)
+        setSlideImage(length)
       }
-      else if(check > 2){
+      else if(check > length){
         setSlideImage(0)
       }else{
         setSlideImage((oldState)=> oldState + num)
@@ -25,15 +26,17 @@ function SlideShow() {
     }
 
   return (
-    <>
-      <div className='slide-show'>
-        <img className='slide-show-img' alt='slide show of paintings by Pascale Stacey' src={slideSource}/> 
-      </div>
-      <div className='arrows'>
-          <span onClick={()=>handleSlideShow(-1)}><img className='arrow left' alt='previous' src={left}/></span>
-          <span onClick={()=>handleSlideShow(1)}><img className='arrow right' alt='next' src={right}/></span>
-      </div>
-      <p>"{title}" <small>{materials}</small></p>
+    <>{loading ? <h4>Loading...</h4> : <div>
+        <div className='slide-show'>
+          <img className='slide-show-img' alt='slide show of paintings by Pascale Stacey' src={slideSource.imgUrl}/> 
+        </div>
+        <div className='arrows'>
+            <span onClick={()=>handleSlideShow(-1)}><img className='arrow left' alt='previous' src={left}/></span>
+            <span onClick={()=>handleSlideShow(1)}><img className='arrow right' alt='next' src={right}/></span>
+        </div>
+        <p>"{slideSource.title}" <small>{slideSource.materials}</small></p>
+      </div>}
+
     </>
   )
 }
