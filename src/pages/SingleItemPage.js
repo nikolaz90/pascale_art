@@ -13,7 +13,7 @@ function SingleItemPage() {
   const allArtwork = [...reflections || [], ...isolations || [], ...perceptions || [], ...screens || [], ...prints || []]
 
   return (
-    <section>
+    <main>
       {loading ? <h5 className='loading'>LOADING... {id}</h5> : <article className='single-artwork-container'>
         <img className='single-artwork-img' src={allArtwork[id-1].imgUrl === "" ? noImageLogo : allArtwork[id-1].imgUrl} alt={allArtwork[id-1].title}/>
         <div className='single-artwork-info'>
@@ -22,7 +22,7 @@ function SingleItemPage() {
           <p>{allArtwork[id-1].description}</p>
         </div>
       </article>}
-    </section>
+    </main>
   )
 }
 

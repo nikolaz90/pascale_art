@@ -5,7 +5,7 @@ import instagram from '../photos/logos/instagram-brands.svg'
 
 function Footer() {
   return (
-    <section className='footer-section'>
+    <footer className='footer-section'>
       <p>Pascale Stacey</p>
       <p><small>COPYRIGHT 2022</small></p>
       <div>
@@ -13,7 +13,7 @@ function Footer() {
         <a target='_blank' rel='noreferrer' href='https://www.instagram.com/pascalestacey/'><img src={instagram} alt='follow me on instagram' className='footer-icon'/></a>
       </div>
       
-    </section>
+    </footer>
   )
 }
 

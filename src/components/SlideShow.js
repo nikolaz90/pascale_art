@@ -34,7 +34,7 @@ function SlideShow() {
             <span onClick={()=>handleSlideShow(-1)}><img className='arrow left' alt='previous' src={left}/></span>
             <span onClick={()=>handleSlideShow(1)}><img className='arrow right' alt='next' src={right}/></span>
         </div>
-        <p>"{slideSource.title}" <small>{slideSource.materials}</small></p>
+        <p className='slide-show-info'>"{slideSource.title}" <small>{slideSource.materials}</small></p>
       </div>}
 
     </>

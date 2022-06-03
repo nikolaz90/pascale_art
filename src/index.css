@@ -155,6 +155,7 @@ button{
         height: 400px;
     }
 }
+
 @keyframes fade-in-img {
     0%{
         opacity: 0;
@@ -163,6 +164,7 @@ button{
         opacity: 1;
     }
 }
+
 
 /*sections*/
 .section{
@@ -198,6 +200,7 @@ button{
 }
 .left:hover{
     transform: translate(-6px);
+
 }
 .right:hover{
     transform: translate(6px);
@@ -214,6 +217,18 @@ button{
     }
 }
 
+.slide-show-info{
+    text-align: center;
+}
+
+/*homepage text*/
+
+.homepage-text-section{
+    max-width: 95ch;
+}
+.emphasised-text{
+    font-weight: bold;
+}
 
 /*Overview*/
 .overview-container{
@@ -402,6 +417,13 @@ button{
     height: 150px;
     padding: 5px 20px;
     resize: vertical;
+}
+.form-input-label{
+    font-size: x-small;
+    color: rgb(141, 141, 141);
+    animation: fade-in-img 4s;
+    align-self: flex-end;
+    margin-right: 9%;
 }
 
 /*Single page*/

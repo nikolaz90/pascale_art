@@ -19,17 +19,22 @@ function Contact() {
   }
 
   return (
-    <section className='text-container'>
-
-      <form className='contact-form' onSubmit={handleSubmit} action='https://formsubmit.co/a4a24ec97848babda9703381c889c4b6' target='_blank' method='POST'>
-        <p>Get in touch and start a conversation with me using the form below.</p>
-        <input className='form-input' id='contactEmail' type='text' name='email' placeholder='your.email@address.com' required/>
-        <input className='form-input' id='contactSubject' type='text' name='subject' placeholder='subject' required/>
-        <textarea className='form-input form-message' id='contactMessage' type='text' name='message' placeholder='your message here.' required/>
-        <button type='submit' className='toggle-details-btn'>Send</button>
-        {isSent && <span><small>message sent!</small></span>} 
-      </form>
-    </section>
+    <main>
+      <section className='text-container'>
+        <form className='contact-form' onSubmit={handleSubmit} action='https://formsubmit.co/a4a24ec97848babda9703381c889c4b6' target='_blank' method='POST'>
+          <p>Get in touch and start a conversation with me using the form below.</p>
+          <input className='form-input' id='contactEmail' type='text' name='email' placeholder='your.email@address.com' required/>
+          <label className='form-input-label' htmlFor='contactEmail'>your email address</label>
+          <input className='form-input' id='contactSubject' type='text' name='subject' placeholder='subject' required/>
+          <label className='form-input-label' htmlFor="contactSubject">add a subject</label>
+          <textarea className='form-input form-message' id='contactMessage' type='text' name='message' placeholder='your message here' required/>
+          <label className='form-input-label' htmlFor='contactMessage'>your message</label>
+          <button type='submit' className='toggle-details-btn'>Send</button>
+          {isSent && <span><small>message sent!</small></span>} 
+        </form>
+      </section>
+    </main>
+    
   )
 }
 

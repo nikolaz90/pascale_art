@@ -3,10 +3,13 @@ import PrintsDisplay from '../components/PrintsDisplay'
 
 function Prints() {
   return (
-    <section className='prints-section text-container section'>
-      <h2 className='page-title'>Prints</h2>
-      <PrintsDisplay/>
-    </section>
+    <main>
+      <section className='prints-section text-container section'>
+        <h2 className='page-title'>Prints</h2>
+        <PrintsDisplay/>
+      </section>
+    </main>
+    
   )
 }
 
