@@ -36,7 +36,6 @@ function SlideShow() {
         </div>
         <p className='slide-show-info'>"{slideSource.title}" <small>{slideSource.materials}</small></p>
       </div>}
-
     </>
   )
 }
