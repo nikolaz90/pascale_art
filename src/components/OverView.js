@@ -7,7 +7,7 @@ function OverView() {
     const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = data
     const {reflections, isolations, perceptions} = paintings[0]
     
-    const overviewPaintings = [...isolations.slice(-2),...reflections.slice(0,2),...perceptions.slice(-2)]
+    const overviewPaintings = [...isolations.slice(-1),...reflections.slice(0,1),...perceptions.slice(-1)]
 
     const [isMoreActive, setIsMoreActive] = useState(null);
 

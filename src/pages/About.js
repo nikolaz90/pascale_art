@@ -6,6 +6,7 @@ import img4 from '../photos/details/img4.jpg'
 import img5 from '../photos/details/img5.jpg'
 import img6 from '../photos/details/img6.jpg'
 import img7 from '../photos/details/img7.jpg'
+import artistImg from '../photos/about/pascImg1.jpg'
 
 function About() {
   return (
@@ -18,6 +19,7 @@ function About() {
           She has exhibited her work over the last few years with the Marlborough Open Studios (see www.marlboroughopenstudios.co.uk) 
           and works mainly on commissions in the UK and abroad.  
         </p>
+        <img src={artistImg} className='artist-img' alt='Pascale Stacey smiling at the camera whilst painting' />
         <h2 className='page-title'>The process</h2>
         <p>
           Every piece is an individually thought-out and utterly unique proposition.

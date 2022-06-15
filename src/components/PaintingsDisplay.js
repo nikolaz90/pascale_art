@@ -9,6 +9,8 @@ function PaintingsDisplay() {
  const {paintings = [{reflections:[],isolations:[],perceptions:[]}]} = data
  const {reflections, isolations, perceptions} = paintings[0]
 
+ console.log(data);
+
  const handleClickActive = (displayNum)=>{
     setIsActive(displayNum)
  }
