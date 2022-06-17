@@ -169,6 +169,8 @@ button{
 /*sections*/
 .section{
     animation: fade-in-img 1s;
+    max-width: 1500px;
+    text-align: center;
 }
 /*loading*/
 .loading-home{
@@ -410,6 +412,12 @@ button{
     margin: 30px;
 }
 
+@media (min-width:1300px) {
+    .painting-article{
+        overflow: hidden;
+    }
+}
+
 .painting-article-img{
     height: auto;
     overflow:hidden;
@@ -439,7 +447,6 @@ button{
 }
 
 /* Contact page*/
-
 .contact-form{
     display: flex;
     flex-direction: column;

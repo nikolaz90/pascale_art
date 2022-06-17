@@ -20,7 +20,7 @@ function Contact() {
 
   return (
     <main>
-      <section className='text-container'>
+      <section className='section text-container'>
         <form className='contact-form' onSubmit={handleSubmit} action='https://formsubmit.co/a4a24ec97848babda9703381c889c4b6' target='_blank' method='POST'>
           <p>Get in touch and start a conversation with me using the form below.</p>
           <input className='form-input' id='contactEmail' type='text' name='email' placeholder='your.email@address.com' required/>
