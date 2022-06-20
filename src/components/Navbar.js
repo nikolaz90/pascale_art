@@ -16,7 +16,7 @@ function Navbar() {
     <>
     <nav className='navbar'>
       <div className='title-container'>
-        <Link to='/'><h1 className='nav-title'>Pascale Stacey Art</h1></Link>
+        <Link to='/' className='nav-title-link'><h1 className='nav-title'>Pascale Stacey<span className='nav-title-grey'>artist painter</span></h1></Link>
           <input id='hamburger-checkbox' type='checkbox'/>
           <label className='hamburger' onClick={handleCheck} htmlFor='hamburger-checkbox'>
             <div className='hamburger-line'></div>

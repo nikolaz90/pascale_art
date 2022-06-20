@@ -43,21 +43,27 @@ function About() {
         <h2 className='page-title'>The process</h2>
         <p>
           Every piece is an individually thought-out and utterly unique proposition.
-          For my screens, I have a close working relationship with a local craftsman, who shapes panels and frames to precise  specifications. 
-          Materials are sourced locally and designed to be both light-weight and perfectly balanced.
-          Inspired by tensions, patterns, collisions, still life, nature and the contemporary, 
+        </p>
+        <p>
+          Initially, I start by working with primary colours and white, in oil, acrylic, ink, or emulsion, in each case creating my own colours, by mixing and mixing. 
+          It is part of my artistic identity. My paintings, framed or unframed according to the choice of the purchaser, are priced in the range £120-3000. 
+          Drawings are priced from £100.
+        </p>
+        <p>
+          The screens are made either of wood or of canvas and prices are on application.
+          For my screens, I have a close working relationship with a local craftsman, who shapes panels and frames to precise specifications. 
+          Materials are sourced locally and designed to be both light-weight and perfectly balanced. Inspired by tensions, patterns, collisions, still life, nature and the contemporary, 
           I experiment with different designs and colours to create an initial concept, either alone or in consultation with a client for a commission.
-          Initially, I start by working with primary colours and white, in oil, acrylic, ink, or emulsion, in each case creating my own colours, by mixing and mixing.  
-          It is part of my artistic identity. 
-          The screens I use are made either of wood or of canvas and prices are on application.  
-          My paintings, framed or unframed according to the choice of the purchaser, are priced in the range £120-3000. Drawings are priced from £100.
-          I also paint murals either inside or outside the home.
+        </p>
+        <p>
+          I also paint murals either inside or outside the home on request.
         </p>
         <div className='about-img-container'>
           {detailsImages.map((item, index)=>{
             return <img key={index} src={item} alt='detail of work in process' className='about-detail-img'/>
           })}
         </div>
+        <p><small>Photographers: © Nigel Hudson nigelhudson.co.uk, © Deborah Husk deborahhusk.co.uk, © Gordon Burns, Skylight Printing skylightpublishing.com</small></p>
       </section>
     </main>
     

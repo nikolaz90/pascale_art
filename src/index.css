@@ -46,6 +46,12 @@ button{
     font-size:xx-large;
     font-weight: 100;
     margin: 0px 0px 0px 5px;
+    width: 100%;
+}
+.nav-title-grey{
+    color: rgb(141, 141, 141);
+    right: 0px;
+    margin-left: 15px;
 }
 .nav-link{
     text-transform: uppercase;
@@ -127,6 +133,9 @@ button{
         align-items: center;
         display: none;   
     } 
+    .nav-title-grey{
+        display: none;
+    }
 }
 
 .overlay-menu{
