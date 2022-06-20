@@ -6,7 +6,10 @@ function PaintingsSubDisplay({subDisplayData}) {
   return (
     <div className='paintings-articles-container'>{
         subDisplayData.map((item, index) => {
-            return (
+          if(!item.imgUrl){
+            return
+          }
+          return (
             <article key={index} className='painting-article'>
                 <img className='painting-article-img' src={item.imgUrl === "" ? noImageLogo:item.imgUrl} alt={item.title}/>
                 <h5>{item.title}</h5>

@@ -6,9 +6,14 @@ import img4 from '../photos/details/img4.jpg'
 import img5 from '../photos/details/img5.jpg'
 import img6 from '../photos/details/img6.jpg'
 import img7 from '../photos/details/img7.jpg'
+import img8 from '../photos/details/img8.jpg'
+import img9 from '../photos/details/img9.jpg'
+import img10 from '../photos/details/img10.jpg'
 import artistImg from '../photos/about/pascImg1.jpg'
 
 function About() {
+  const detailsImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10]
+
   return (
     <main>
       <section className='section about-section text-container'>
@@ -18,6 +23,21 @@ function About() {
           She received a private art education in Brittany and has shown her work in Drogheda, London, and Reading. 
           She has exhibited her work over the last few years with the Marlborough Open Studios (see www.marlboroughopenstudios.co.uk) 
           and works mainly on commissions in the UK and abroad.  
+        </p>
+        <p>
+          My formal artistic CV is short. It was a tradition in my mother’s family to be taught art from an early age. 
+          Throughout our school years, my three sisters and I were all pupils of Cécilia, a well-known painter in our town in Brittany. 
+          Unfortunately attending art school was not an option but this did not stop me from painting during any spare time available.
+        </p>
+
+        <p>
+          In 2004, I moved to Brussels from London and there I started painting screens on commission. Today my screens stand in homes in Belgium, Italy, France, and the UK. 
+          On returning to the UK in 2014 when I came to live in Avebury, I decided to paint more or less full-time, encouraged by local artists Charles Rodwell and the late Diana Reynell.
+        </p>
+        <p>
+          I have exhibited during the Marlborough Open Studios since 2017. 
+          Previously my work has been shown in galleries in Reading, Notting Hill Gate, and Dun Laoghaire. 
+          Next on the list: Harrogate and - hopefully! - Montsalès in the south of France.
         </p>
         <img src={artistImg} className='artist-img' alt='Pascale Stacey smiling at the camera whilst painting' />
         <h2 className='page-title'>The process</h2>
@@ -34,13 +54,9 @@ function About() {
           I also paint murals either inside or outside the home.
         </p>
         <div className='about-img-container'>
-          <img src={img1} alt='detail of work in process' className='about-detail-img'/>
-          <img src={img2} alt='detail of work in process' className='about-detail-img'/>
-          <img src={img3} alt='detail of work in process' className='about-detail-img'/>
-          <img src={img4} alt='detail of work in process' className='about-detail-img'/>
-          <img src={img5} alt='detail of work in process' className='about-detail-img'/>
-          <img src={img6} alt='detail of work in process' className='about-detail-img'/>
-          <img src={img7} alt='detail of work in process' className='about-detail-img'/>
+          {detailsImages.map((item, index)=>{
+            return <img key={index} src={item} alt='detail of work in process' className='about-detail-img'/>
+          })}
         </div>
       </section>
     </main>
