@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className='footer-section'>
       <p>Pascale Stacey</p>
-      <p><small>COPYRIGHT 2022</small></p>
+      <p><small>COPYRIGHT {new Date().getFullYear()}</small></p>
       <div>
         <Link to='/contact'><img src={email} alt='email me' className='footer-icon'/></Link>
         <a target='_blank' rel='noreferrer' href='https://www.instagram.com/pascalestacey/'><img src={instagram} alt='follow me on instagram' className='footer-icon'/></a>
