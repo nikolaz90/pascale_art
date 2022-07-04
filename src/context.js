@@ -12,9 +12,6 @@ const initialState = {
 const AppProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    //const url = 'https://cdn.contentful.com/spaces/fol21n7kmioh/environments/master/entries/5T41dzp3uIEUuPUsiZ2FRt?access_token=TDsrblmAYdyKYQ3eVkj86wdC_peFyZvI9q9kyi-QYuQ'
-    //const contenfulKey = process.env.REACT_APP_ACCESS_KEY
-
     const [getPaintings, setGetPaintings] = useState(null)
 
      const contentful = require('contentful')
@@ -22,21 +19,6 @@ const AppProvider = ({children})=>{
          space: process.env.REACT_APP_SPACE_ID,
          accessToken: process.env.REACT_APP_ACCESS_KEY
      })
-
-      //client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
-          //console.log(entry.fields);
-      //})
-
-    // client.getEntries().then(function(entries){
-    //     entries.items.forEach(function (entry){
-    //         if(entry.fields.paintingsImages){
-    //             //console.log(entry.fields.paintingsImages[1].fields.file.url);
-    //         }
-    //     })
-    // })
-
-    //'5T41dzp3uIEUuPUsiZ2FRt'
-    //'1dY7DHcazeHmHhyNQf26uz'
 
       const fetchPaintingsData = ()=>{
                client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
@@ -58,7 +40,7 @@ const AppProvider = ({children})=>{
         }
      },[getPaintings])
 
-    //console.log(state);
+    console.log(state);
 
     return (<AppContext.Provider value={{
         ...state,

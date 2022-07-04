@@ -9,7 +9,7 @@ import Screens from './pages/Screens'
 import Prints from './pages/Prints'
 import Comissions from './pages/Comissions'
 import About from './pages/About'
-import Testimonials from './pages/Testimonials'
+import News from './pages/News'
 import Contact from './pages/Contact'
 import Error from './pages/Error'
 import SingleItemPage from './pages/SingleItemPage'
@@ -35,7 +35,7 @@ function App() {
             <Route path='/prints' element={<Prints/>}/>
             <Route path='/comissions' element={<Comissions/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/testimonials' element={<Testimonials/>}/>
+            <Route path='/news' element={<News/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/singleitempage:id' element={<SingleItemPage/>}/>
             <Route path='/*' element={<Error/>}/>
