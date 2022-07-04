@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Paintings from './pages/Paintings'
 import Screens from './pages/Screens'
 import Prints from './pages/Prints'
-import Comissions from './pages/Comissions'
+import Commissions from './pages/Commissions'
 import About from './pages/About'
 import News from './pages/News'
 import Contact from './pages/Contact'
@@ -33,7 +33,7 @@ function App() {
             <Route path='/paintings' element={<Paintings/>}/>
             <Route path='/screens' element={<Screens/>}/>
             <Route path='/prints' element={<Prints/>}/>
-            <Route path='/comissions' element={<Comissions/>}/>
+            <Route path='/commissions' element={<Commissions/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/news' element={<News/>}/>
             <Route path='/contact' element={<Contact/>}/>

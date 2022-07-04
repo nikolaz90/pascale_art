@@ -15,13 +15,13 @@ function News() {
             <h4>Marlborough Open Studios</h4>
             <p>2022</p>
             <p className='news-article-para'>
-              Marlborough Open Studios has started! Tom Hiscocks scupltures and Pascale Stacey's paintings 
+              Marlborough Open Studios has started! Tom Hiscock's scupltures and Pascale Stacey's paintings 
               are exhibited side by side in Avebury. Watch the video for a sneak peak of their work. Marlborough 
               Open Studios is running every Saturday and Sunday from 2nd July to 24th July.
             </p>
             <p className='news-article-para'>For more information on Marlborough Open Studios and other artists exhibiting, visit </p>
-            <p className='news-article-para'><a href={mosLink} target='_blank' rel="noreferrer" className='mos-link'>https://www.marlboroughopenstudios.co.uk/</a></p>
-            <p className='news-article-para'><a href={tomLink} target='_blank' rel="noreferrer" className='mos-link'>https://tomhiscocks.co.uk/</a></p>
+            <p className='news-article-para'><a href={mosLink} target='_blank' rel="noreferrer" className='mos-link'>marlboroughopenstudios.co.uk</a></p>
+            <p className='news-article-para'><a href={tomLink} target='_blank' rel="noreferrer" className='mos-link'>tomhiscocks.co.uk</a></p>
           </div>
           <div className='news-article-media'>
             <video width='320' height='500' controls>

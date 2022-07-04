@@ -40,7 +40,7 @@ const AppProvider = ({children})=>{
         }
      },[getPaintings])
 
-    console.log(state);
+    //console.log(state);
 
     return (<AppContext.Provider value={{
         ...state,

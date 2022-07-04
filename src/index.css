@@ -523,25 +523,25 @@ button{
     margin: auto;
     padding-bottom: 20px;
 }
-.comissions-info{
+.commissions-info{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-.comissions-info-para{
+.commissions-info-para{
     width: 36ch;
     text-align: center;
     box-shadow: 0px 0px 10px rgb(227, 227, 227);
     margin: 50px;
 }
 
-.comissions-flower-img{
+.commissions-flower-img{
     width: 75%;
     max-width: 600px;
 }
 
-.comission-contact-link{
+.commission-contact-link{
     color: rgb(43, 87, 152);
 }
 
@@ -549,19 +549,19 @@ button{
     .second-para{
         flex-wrap: wrap-reverse;
     } 
-    .comissions-intro{
+    .commissions-intro{
         width: auto;
     }
 }
 
 @media (max-width:550px) {
-    .comissions-info-para{
+    .commissions-info-para{
         margin: 15px;
     }
 }
 
 @media (max-width:400px) {
-    .comissions-flower-img{
+    .commissions-flower-img{
         width: 100%;
     }
 }
@@ -618,7 +618,7 @@ button{
     padding: 2rem;
 }
 .news-article-para{
-    width: auto;
+    width: 100%;
 }
 
 .mos-link{
