@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {useGlobalContext} from '../context'
 
 function News() {
@@ -6,11 +7,14 @@ function News() {
   const videoLink = "//videos.ctfassets.net/fol21n7kmioh/2Qga1iOJGIG5XN1hgn4Ajm/0ae9df0b5385cb1fcf698679d59f13ad/VID-20220702-WA0011.mp4" 
   const mosLink = "https://www.marlboroughopenstudios.co.uk/"
   const tomLink = "https://tomhiscocks.co.uk/"
+  const cmafLink = "https://www.cmaf.org.uk/"
   return (
     <main>
       <section className='section text-container'>
         <h2 className='page-title'>News</h2>
-        { loading ?  <h3>Loading</h3>:<article className='news-article-container'>
+        { loading ?  <h3>Loading</h3>:
+        <>
+        <article className='news-article-container'>
           <div className='news-article-info'>
             <h4>Marlborough Open Studios</h4>
             <p>2022</p>
@@ -30,7 +34,21 @@ function News() {
                 Try this <a href={videoLink} target='_blank' rel="noreferrer">link</a> to watch the video.</p>
             </video>
           </div>
-        </article> }
+        </article> 
+        <article className='news-article-container'>
+        <div className='news-article-info'>
+            <h4>Calne Open Art Exhibition</h4>
+            <p>2022</p>
+            <p className='news-article-para'>
+              I will be taking part in this year’s Calnes Open Art Exhibition as part of the Music and 
+              Art Festivals 2022 from the 7th to 16th October at Marden House, Calnes.  
+              For information please visit <a href={cmafLink} target='_blank' rel="noreferrer" className='mos-link'>cmaf.org.uk</a> 
+              or email me at <Link to='/contact' className='mos-link'>here</Link>.
+            </p>
+          </div>
+        </article>
+        </>
+        }
         
       
     </section>

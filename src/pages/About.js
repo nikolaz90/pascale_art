@@ -37,7 +37,6 @@ function About() {
         <p>
           I have exhibited during the Marlborough Open Studios since 2017. 
           Previously my work has been shown in galleries in Reading, Notting Hill Gate, and Dun Laoghaire. 
-          Next on the list: Harrogate and - hopefully! - Montsalès in the south of France.
         </p>
         <img src={artistImg} className='artist-img' alt='Pascale Stacey smiling at the camera whilst painting' />
         <h2 className='page-title'>The process</h2>
