@@ -16,6 +16,7 @@ const AppProvider = ({children})=>{
     const [getPaintings, setGetPaintings] = useState(null)
     const [getPamPaintings, setGetPamPaintings] = useState(null)
 
+    //contentful solution
     const contentful = require('contentful')
     const client = contentful.createClient({
         space: process.env.REACT_APP_SPACE_ID,
@@ -28,29 +29,6 @@ const AppProvider = ({children})=>{
         }).catch((error)=> console.log(error))
     }
 
-
-    useEffect(() => {
-        let artworks = {}
-        fetch('https://pam.herokuapp.com/paintings_data')
-            .then((data)=> data.json())
-            .then(response => {
-                artworks.paintings = response.reduce((acc, curr) => {
-                    if(curr.category === "painting") acc.push(curr)
-                    return acc
-                }, [])
-                artworks.screens = response.reduce((acc, curr) => {
-                    if(curr.category === "screen") acc.push(curr)
-                    return acc
-                }, [])
-                artworks.prints = response.reduce((acc, curr) => {
-                    if(curr.category === "print") acc.push(curr)
-                    return acc
-                }, [])
-                setGetPamPaintings(artworks)
-            })
-        fetchPaintingsData()
-    }, [])
-
     useEffect(()=>{
         if(getPaintings===null){
             fetchPaintingsData()
@@ -60,7 +38,19 @@ const AppProvider = ({children})=>{
         }
     },[getPaintings])
 
-    console.log(state, getPamPaintings);
+    //DIY solution 
+    const fetchPamData = () => {
+        fetch('https://pam.herokuapp.com/paintings_data')
+            .then((data)=> data.json())
+            .then((response) => setGetPamPaintings(response))
+            .catch((error) => console.log(error))
+    }
+
+    useEffect(() => {
+        getPamPaintings === null ? fetchPamData() : dispatch({type: "SET_PAM_DATA", payload: getPamPaintings})
+    }, [getPamPaintings])
+
+    console.log(state);
 
     return (<AppContext.Provider value={{
         ...state,
