@@ -5,7 +5,7 @@ import {useGlobalContext} from '../context'
 
 function SlideShow() {
     const {loading, data, dataFromPam} = useGlobalContext()
-    console.log('pam data', dataFromPam);
+    console.log('pam data ', dataFromPam);
     const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = data
     const {reflections, isolations, perceptions} = paintings[0]
     const slideShowPhotos = [...reflections.slice(3,4),...isolations.slice(-2),...perceptions.slice(-3)]
