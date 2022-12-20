@@ -4,12 +4,14 @@ import right from '../photos/logos/rightarrow.svg'
 import {useGlobalContext} from '../context'
 
 function SlideShow() {
-    const {loading, data, dataFromPam} = useGlobalContext()
-    console.log('pam data ', dataFromPam);
-    const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = data
-    const {reflections, isolations, perceptions} = paintings[0]
-    const slideShowPhotos = [...reflections.slice(3,4),...isolations.slice(-2),...perceptions.slice(-3)]
+    const {loading, dataFromPam} = useGlobalContext()
+    console.log('pam data ', dataFromPam); 
+    const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = dataFromPam
+    const {reflections, isolations, perceptions} = paintings
+    // const slideShowPhotos = [...reflections.slice(3,4),...isolations.slice(-2),...perceptions.slice(-3)]
+    const slideShowPhotos = [...reflections,...isolations,...perceptions]
     const length = slideShowPhotos.length - 1
+    console.log(slideShowPhotos);
 
     const [slideImage, setSlideImage] = useState(0)
     const slideSource = slideShowPhotos[slideImage]
@@ -29,7 +31,7 @@ function SlideShow() {
   return (
     <>{loading ? <h4>Loading...</h4> : <div>
         <div className='slide-show'>
-          <img className='slide-show-img' alt='slide show of paintings by Pascale Stacey' src={slideSource.imgUrl}/> 
+          <img className='slide-show-img' alt='slide show of paintings by Pascale Stacey' src={slideSource.image_url}/> 
         </div>
         <div className='arrows'>
             <span onClick={()=>handleSlideShow(-1)}><img className='arrow left' alt='previous' src={left}/></span>

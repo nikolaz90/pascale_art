@@ -29,14 +29,14 @@ const AppProvider = ({children})=>{
         }).catch((error)=> console.log(error))
     }
 
-    useEffect(()=>{
-        if(getPaintings===null){
-            fetchPaintingsData()
-            return
-        }else{
-            dispatch({type:'SET_DATA', payload:getPaintings})  
-        }
-    },[getPaintings])
+    // useEffect(()=>{
+    //     if(getPaintings===null){
+    //         fetchPaintingsData()
+    //         return
+    //     }else{
+    //         dispatch({type:'SET_DATA', payload:getPaintings})  
+    //     }
+    // },[getPaintings])
 
     //DIY solution 
     const fetchPamData = () => {

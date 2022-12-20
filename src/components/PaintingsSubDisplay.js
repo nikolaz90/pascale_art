@@ -6,12 +6,12 @@ function PaintingsSubDisplay({subDisplayData}) {
   return (
     <div className='paintings-articles-container'>{
         subDisplayData.map((item, index) => {
-          if(!item.imgUrl){
+          if(!item.image_url){
             return
           }
           return (
             <article key={index} className='painting-article'>
-                <img className='painting-article-img' src={item.imgUrl === "" ? noImageLogo:item.imgUrl} alt={item.title}/>
+                <img className='painting-article-img' src={item.image_url === "" ? noImageLogo : item.image_url} alt={item.title}/>
                 <h5>{item.title}</h5>
                 <p><small>{item.dimensions}</small></p> 
                 <Link to={`/singleitempage${item.id}`}><button className='toggle-details-btn'>More</button></Link>

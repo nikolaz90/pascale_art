@@ -5,9 +5,9 @@ import PaintingsSubDisplay from './PaintingsSubDisplay'
 function PaintingsDisplay() {
  const [isActive, setIsActive] = useState(0)
 
- const {loading, data} = useGlobalContext()
- const {paintings = [{reflections:[],isolations:[],perceptions:[]}]} = data
- const {reflections, isolations, perceptions} = paintings[0]
+ const {loading, dataFromPam} = useGlobalContext()
+ const {paintings = [{reflections:[],isolations:[],perceptions:[]}]} = dataFromPam
+ const {reflections, isolations, perceptions} = paintings
 
  //console.log(reflections);
 
