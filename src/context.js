@@ -13,21 +13,21 @@ const initialState = {
 const AppProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const [getPaintings, setGetPaintings] = useState(null)
+    // const [getPaintings, setGetPaintings] = useState(null)
     const [getPamPaintings, setGetPamPaintings] = useState(null)
 
     //contentful solution
-    const contentful = require('contentful')
-    const client = contentful.createClient({
-        space: process.env.REACT_APP_SPACE_ID,
-        accessToken: process.env.REACT_APP_ACCESS_KEY
-    })
+    // const contentful = require('contentful')
+    // const client = contentful.createClient({
+    //     space: process.env.REACT_APP_SPACE_ID,
+    //     accessToken: process.env.REACT_APP_ACCESS_KEY
+    // })
 
-    const fetchPaintingsData = ()=>{
-            client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
-                setGetPaintings(entry.fields)
-        }).catch((error)=> console.log(error))
-    }
+    // const fetchPaintingsData = ()=>{
+    //         client.getEntry('5T41dzp3uIEUuPUsiZ2FRt').then(function (entry){
+    //             setGetPaintings(entry.fields)
+    //     }).catch((error)=> console.log(error))
+    // }
 
     // useEffect(()=>{
     //     if(getPaintings===null){
@@ -50,11 +50,10 @@ const AppProvider = ({children})=>{
         getPamPaintings === null ? fetchPamData() : dispatch({type: "SET_PAM_DATA", payload: getPamPaintings})
     }, [getPamPaintings])
 
-    console.log(state);
+    // console.log(state);
 
     return (<AppContext.Provider value={{
         ...state,
-        fetchPaintingsData,
     }}>
         {children}
     </AppContext.Provider>

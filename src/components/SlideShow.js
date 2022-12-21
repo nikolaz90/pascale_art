@@ -8,7 +8,6 @@ function SlideShow() {
     console.log('pam data ', dataFromPam); 
     const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = dataFromPam
     const {reflections, isolations, perceptions} = paintings
-    // const slideShowPhotos = [...reflections.slice(3,4),...isolations.slice(-2),...perceptions.slice(-3)]
     const slideShowPhotos = [...reflections,...isolations,...perceptions]
     const length = slideShowPhotos.length - 1
     console.log(slideShowPhotos);
