@@ -11,16 +11,16 @@ function SingleItemPage() {
   const {reflections, isolations, perceptions} = paintings
 
   const allArtwork = [...reflections || [], ...isolations || [], ...perceptions || [], ...screens || [], ...prints || []]
-  // sort out the back end paintings all before continuing here. 
-  console.log(allArtwork);
+  const singleArtwork = allArtwork.filter((item) => item.id === parseInt(id))[0]
+
   return (
     <main>
       {loading ? <h5 className='loading'>LOADING... {id}</h5> : <article className='single-artwork-container'>
-        <img className='single-artwork-img' src={allArtwork[id-1].image_url === "" ? noImageLogo : allArtwork[id-1].image_url} alt={allArtwork[id-1].title}/>
+        <img className='single-artwork-img' src={singleArtwork.image_url === "" ? noImageLogo : singleArtwork.image_url} alt={singleArtwork.title}/>
         <div className='single-artwork-info'>
-          <h2>{allArtwork[id-1].title}</h2>
-          <p><small>{allArtwork[id-1].materials + ' - ' + allArtwork[id-1].dimensions}</small></p>
-          <p>{allArtwork[id-1].description}</p>
+          <h2>{singleArtwork.title}</h2>
+          <p><small>{singleArtwork.materials + ' - ' + singleArtwork.dimensions}</small></p>
+          <p>{singleArtwork.description}</p>
         </div>
       </article>}
     </main>
