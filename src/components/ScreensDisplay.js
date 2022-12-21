@@ -3,8 +3,8 @@ import {useGlobalContext} from '../context'
 import {Link} from 'react-router-dom'
 
 function ScreensDisplay() {
-const {loading, data} = useGlobalContext()
-const {screens, screensImages} = data
+const {loading, dataFromPam} = useGlobalContext()
+const {screens} = dataFromPam
 
 return (
     <>
@@ -12,7 +12,7 @@ return (
             screens.map((item, index) => {
                 return (
                 <article key={index} className='painting-article'>
-                    <img className='painting-article-img' src={item.imgUrl} alt={item.title}/>
+                    <img className='painting-article-img' src={item.image_url} alt={item.title}/>
                     <h5>{item.title}</h5>
                     <p><small>{item.dimensions}</small></p>
                     <Link to={`/singleitempage${item.id}`}><button className='toggle-details-btn'>More</button></Link>

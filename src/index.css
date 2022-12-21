@@ -428,6 +428,7 @@ button{
 }
 
 .painting-article-img{
+    border-radius: 8px;
     height: auto;
     overflow:hidden;
     max-width: 500px;
@@ -492,12 +493,18 @@ button{
     justify-content: center;
 }
 .single-artwork-info{
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(227, 227, 227);
     width: 35ch;
     margin: 50px;
     height: fit-content;
 }
+.single-artwork-info small {
+    padding-left: 0;
+}
+
 .single-artwork-img{
+    border-radius: 8px;
     height: 100%;
     max-height: 500px;
     /* width: 60%; */
@@ -530,10 +537,15 @@ button{
     justify-content: center;
 }
 .commissions-info-para{
+    border-radius: 8px;
     width: 36ch;
     text-align: center;
     box-shadow: 0px 0px 10px rgb(227, 227, 227);
     margin: 50px;
+}
+
+.commissions-info img {
+    border-radius: 8px;
 }
 
 .commissions-flower-img{
@@ -580,6 +592,7 @@ button{
 }
 
 .about-detail-img{
+    border-radius: 8px;
     width: 200px;
     height: 165px;
     overflow: hidden;
@@ -590,6 +603,7 @@ button{
     animation: fade-in-img 0.7s;
 }
 .artist-img{
+    border-radius: 8px;
     position: relative;
     width: 25rem;
     height: 25rem;
@@ -612,6 +626,7 @@ button{
     align-items: center;
 }
 .news-article-info{
+    border-radius: 8px;
     width: 95%;
     max-width: 22rem;
     box-shadow: 0px 0px 10px rgb(227, 227, 227);
