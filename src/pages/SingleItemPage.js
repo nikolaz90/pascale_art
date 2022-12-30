@@ -19,7 +19,7 @@ function SingleItemPage() {
         <img className='single-artwork-img' src={singleArtwork.image_url === "" ? noImageLogo : singleArtwork.image_url} alt={singleArtwork.title}/>
         <div className='single-artwork-info'>
           <h2>{singleArtwork.title}</h2>
-          <p><small>{singleArtwork.materials + ' - ' + singleArtwork.dimensions}</small></p>
+          <p><small>{singleArtwork.materials} {singleArtwork.dimensions !== 'n/a' ? `- ${singleArtwork.dimensions}` : ""}</small></p>
           <p>{singleArtwork.description}</p>
         </div>
       </article>}

@@ -13,7 +13,7 @@ function PaintingsSubDisplay({subDisplayData}) {
             <article key={index} className='painting-article'>
                 <img className='painting-article-img' src={item.image_url === "" ? noImageLogo : item.image_url} alt={item.title}/>
                 <h5>{item.title}</h5>
-                <p><small>{item.dimensions}</small></p> 
+                <p><small>{item.dimensions !== "n/a" ? item.dimensions : ""}</small></p> 
                 <Link to={`/singleitempage${item.id}`}><button className='toggle-details-btn'>More</button></Link>
             </article> )
         })}
