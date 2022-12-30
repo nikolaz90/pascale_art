@@ -1,6 +1,4 @@
-import React, {useState} from 'react'
-//import {useGlobalContext} from '../context'
-import {paintings} from '../data/mockData/data'
+import React from 'react'
 import SlideShow from '../components/SlideShow'
 import HomepageText from '../components/HomepageText'
 import OverView from '../components/OverView'

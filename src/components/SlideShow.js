@@ -5,12 +5,10 @@ import {useGlobalContext} from '../context'
 
 function SlideShow() {
     const {loading, dataFromPam} = useGlobalContext()
-    console.log('pam data ', dataFromPam); 
     const {paintings = [{reflections:[], isolations:[], perceptions:[]}]} = dataFromPam
     const {reflections, isolations, perceptions} = paintings
     const slideShowPhotos = [...reflections,...isolations,...perceptions]
     const length = slideShowPhotos.length - 1
-    console.log(slideShowPhotos);
 
     const [slideImage, setSlideImage] = useState(0)
     const slideSource = slideShowPhotos[slideImage]
