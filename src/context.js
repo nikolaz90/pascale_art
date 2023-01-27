@@ -21,14 +21,6 @@ const AppProvider = ({children})=>{
             .catch((error) => console.log(error))
     }
 
-    //leave for testing purposes
-    // const fetchPamData = () => {
-    //     fetch('https://pam.herokuapp.com/paintings_data')
-    //         .then((data)=> data.json())
-    //         .then((response) => setGetPamPaintings(response))
-    //         .catch((error) => console.log(error))
-    // }
-
     useEffect(() => {
         getPamPaintings === null ? fetchPamData() : dispatch({type: "SET_PAM_DATA", payload: getPamPaintings})
     }, [getPamPaintings])
