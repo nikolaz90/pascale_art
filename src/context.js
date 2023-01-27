@@ -13,13 +13,21 @@ const AppProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const [getPamPaintings, setGetPamPaintings] = useState(null)
-
+      
     const fetchPamData = () => {
-        fetch('https://pam.herokuapp.com/paintings_data')
+        fetch('https://pam.herokuapp.com/api/v1/paintings_data')
             .then((data)=> data.json())
             .then((response) => setGetPamPaintings(response))
             .catch((error) => console.log(error))
     }
+
+    //leave for testing purposes
+    // const fetchPamData = () => {
+    //     fetch('https://pam.herokuapp.com/paintings_data')
+    //         .then((data)=> data.json())
+    //         .then((response) => setGetPamPaintings(response))
+    //         .catch((error) => console.log(error))
+    // }
 
     useEffect(() => {
         getPamPaintings === null ? fetchPamData() : dispatch({type: "SET_PAM_DATA", payload: getPamPaintings})
