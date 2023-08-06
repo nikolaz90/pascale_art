@@ -8,12 +8,34 @@ function News() {
   const mosLink = "https://www.marlboroughopenstudios.co.uk/"
   const tomLink = "https://tomhiscocks.co.uk/"
   const cmafLink = "https://www.cmaf.org.uk/"
+  const richardLink = "https://www.richarddraper.co.uk/"
   return (
     <main>
       <section className='section text-container'>
         <h2 className='page-title'>News</h2>
         { loading ?  <h3>Loading</h3>:
         <>
+        <article className='news-article-container'>
+          <div className='news-article-info'>
+            <h4>Galerie de la Tour Montsalès, Aveyron</h4>
+            <p>2023</p>
+            <p className='news-article-para'>
+              Exhibition at the Galerie De La Tour Montsalès in August 2023 alongside Marie Claude Very.
+            </p>
+          </div>
+        </article>
+        <article className='news-article-container'>
+          <div className='news-article-info'>
+            <h4>Marlborough Open Studios</h4>
+            <p>2023</p>
+            <p className='news-article-para'>
+              Thank you all for comming to this year's Marlborough Open Studios. Richard Draper (photographer)
+              and myself very much enjoyed your visit and sharing ideas. You came in large number this year !
+            </p>
+            <p className='news-article-para'><a href={mosLink} target='_blank' rel="noreferrer" className='mos-link'>marlboroughopenstudios.co.uk</a></p>
+            <p className='news-article-para'><a href={richardLink} target='_blank' rel="noreferrer" className='mos-link'>richarddraper.co.uk</a></p>
+          </div>
+        </article>
         <article className='news-article-container'>
           <div className='news-article-info'>
             <h4>Marlborough Open Studios</h4>
@@ -36,7 +58,7 @@ function News() {
           </div>
         </article> 
         <article className='news-article-container'>
-        <div className='news-article-info'>
+          <div className='news-article-info'>
             <h4>Calne Open Art Exhibition</h4>
             <p>2022</p>
             <p className='news-article-para'>
