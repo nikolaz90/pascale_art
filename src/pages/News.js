@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {useGlobalContext} from '../context'
 
-import montsales from '../photos/news/montsalès.jpg'
+import montsales from '../photos/news/montsales.jpg'
 import mos2023 from '../photos/news/mos_2023.jpg'
 
 function News() {
@@ -31,6 +31,9 @@ function News() {
           </div>
         </article>
         <article className='news-article-container'>
+          <div className='news-article-media'>
+            <img src={mos2023} className='artist-img' alt='Painting by Pascale Stacey of a house and tractor' />
+          </div>
           <div className='news-article-info'>
             <h4>Marlborough Open Studios</h4>
             <p>2023</p>
@@ -40,9 +43,6 @@ function News() {
             </p>
             <p className='news-article-para'><a href={mosLink} target='_blank' rel="noreferrer" className='mos-link'>marlboroughopenstudios.co.uk</a></p>
             <p className='news-article-para'><a href={richardLink} target='_blank' rel="noreferrer" className='mos-link'>richarddraper.co.uk</a></p>
-          </div>
-          <div className='news-article-media'>
-            <img src={mos2023} className='artist-img' alt='Painting by Pascale Stacey of a house and tractor' />
           </div>
         </article>
         <article className='news-article-container'>
