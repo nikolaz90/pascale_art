@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {useGlobalContext} from '../context'
 
+import montsales from '../photos/news/montsalès.jpg'
+import mos2023 from '../photos/news/mos_2023.jpg'
+
 function News() {
   const {loading} = useGlobalContext()
   const videoLink = "//videos.ctfassets.net/fol21n7kmioh/2Qga1iOJGIG5XN1hgn4Ajm/0ae9df0b5385cb1fcf698679d59f13ad/VID-20220702-WA0011.mp4" 
@@ -23,6 +26,9 @@ function News() {
               Exhibition at the Galerie De La Tour Montsalès in August 2023 alongside Marie Claude Very.
             </p>
           </div>
+          <div className='news-article-media'>
+            <img src={montsales} className='artist-img' alt='Montsalès galerie exhibition' />
+          </div>
         </article>
         <article className='news-article-container'>
           <div className='news-article-info'>
@@ -34,6 +40,9 @@ function News() {
             </p>
             <p className='news-article-para'><a href={mosLink} target='_blank' rel="noreferrer" className='mos-link'>marlboroughopenstudios.co.uk</a></p>
             <p className='news-article-para'><a href={richardLink} target='_blank' rel="noreferrer" className='mos-link'>richarddraper.co.uk</a></p>
+          </div>
+          <div className='news-article-media'>
+            <img src={mos2023} className='artist-img' alt='Painting by Pascale Stacey of a house and tractor' />
           </div>
         </article>
         <article className='news-article-container'>
