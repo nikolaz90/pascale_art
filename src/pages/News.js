@@ -13,6 +13,7 @@ function News() {
   const tomLink = "https://tomhiscocks.co.uk/"
   const cmafLink = "https://www.cmaf.org.uk/"
   const richardLink = "https://www.richarddraper.co.uk/"
+  const whiteHorseLink = "https://www.whitehorsebooks.co.uk/wh-gallery"
 
   return (
     <main>
@@ -25,12 +26,12 @@ function News() {
                 <img src={mos2024} className='artist-img' alt='Montsalès galerie exhibition' />
               </div>
               <div className='news-article-info'>
-                <h4>Marlborough Open Studios</h4>
+                <h4>Perspectives</h4>
                 <p>2024</p>
                 <p className='news-article-para'>
-                  Perspectives, Marlborough Open Studios at the White Horse.
+                  At the White Horse Gallery in Marlborough - from 8th March to 31st March, 2024
                 </p>
-                <p className='news-article-para'><a href={mosLink} target='_blank' rel="noreferrer" className='mos-link'>marlboroughopenstudios.co.uk</a></p>
+                <p className='news-article-para'><a href={whiteHorseLink} target='_blank' rel="noreferrer" className='mos-link'>whitehorsebooks.co.uk</a></p>
               </div>
             </article>
             <article className='news-article-container'>
