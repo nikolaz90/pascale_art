@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect, useReducer} from 'react'
+import React, { useState, useContext, useEffect, useReducer } from 'react'
 import reducer from './reducer';
 
 const AppContext = React.createContext();
@@ -9,20 +9,21 @@ const initialState = {
     loading: true,
 }
 
-const AppProvider = ({children})=>{
+const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const [getPamPaintings, setGetPamPaintings] = useState(null)
-      
+    // const oldApi = 'https://pam.herokuapp.com/api/v1/paintings_data'
+    const ruboApiEndPoint = 'https://rubopop.hi.nikolaz.tech/api/v1/clients/pam/paintings'
     const fetchPamData = () => {
-        fetch('https://pam.herokuapp.com/api/v1/paintings_data')
-            .then((data)=> data.json())
+        fetch(ruboApiEndPoint)
+            .then((data) => data.json())
             .then((response) => setGetPamPaintings(response))
             .catch((error) => console.log(error))
     }
 
     useEffect(() => {
-        getPamPaintings === null ? fetchPamData() : dispatch({type: "SET_PAM_DATA", payload: getPamPaintings})
+        getPamPaintings === null ? fetchPamData() : dispatch({ type: "SET_PAM_DATA", payload: getPamPaintings })
     }, [getPamPaintings])
 
     // console.log(state);
@@ -32,10 +33,11 @@ const AppProvider = ({children})=>{
     }}>
         {children}
     </AppContext.Provider>
-)}
+    )
+}
 
-export const useGlobalContext = ()=>{
+export const useGlobalContext = () => {
     return useContext(AppContext)
 }
 
-export {AppContext, AppProvider}
+export { AppContext, AppProvider }
