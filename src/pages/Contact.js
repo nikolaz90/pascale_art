@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
+import axios from 'axios';
+import { PAPATOO_BASEURL, PAPATOO_V1_CLIENTS } from '../utils/constants/apiConfig';
 
 function Contact() {
   const [isSent, setIsSent] = useState(false)
+  const startTime = new Date()
 
   const handleSubmit = (e) => {
-    //e.preventDefault()
-    console.log('You have sent the following email sucessfully : subject ' + e.target.contactSubject.value + ', message : ' + e.target.contactMessage.value)
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    formData.append('name', formData.get('email'))
+    formData.append('start_time', startTime)
+    formData.append('submit_time', new Date())
+    formData.append('website', process.env.REACT_APP_WEBSITE_KEY)
+    const formEntries = Object.fromEntries(formData.entries())
+    sendFormData(formEntries)
     setIsSent(true)
     toggleIsSent()
   }
@@ -16,10 +25,16 @@ function Contact() {
     }, 10000)
   }
 
+  const sendFormData = (formEntries) => {
+    const submissionData = { submission: formEntries }
+    console.log(submissionData);
+    axios.post(`${PAPATOO_BASEURL}${PAPATOO_V1_CLIENTS}/contact_form_submission`, formEntries)
+  }
+
   return (
     <main>
       <section className='section text-container'>
-        <form className='contact-form' onSubmit={handleSubmit} action='https://formsubmit.co/pascedm@gmail.com' target='_blank' method='POST'>
+        <form id='pam-contact-form' className='contact-form' onSubmit={handleSubmit}>
           <p>Get in touch and start a conversation with me using the form below.</p>
           <input className='form-input' id='contactEmail' type='text' name='email' placeholder='your.email@address.com' required />
           <label className='form-input-label' htmlFor='contactEmail'>your email address</label>
