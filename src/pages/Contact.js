@@ -8,10 +8,11 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const submitTime = new Date()
     const formData = new FormData(e.target)
     formData.append('name', formData.get('email'))
-    formData.append('start_time', startTime)
-    formData.append('submit_time', new Date())
+    formData.append('start_time', startTime.getTime())
+    formData.append('submit_time', submitTime.getTime())
     formData.append('website', process.env.REACT_APP_WEBSITE_KEY)
     const formEntries = Object.fromEntries(formData.entries())
     sendFormData(formEntries)
@@ -28,7 +29,7 @@ function Contact() {
   const sendFormData = (formEntries) => {
     const submissionData = { submission: formEntries }
     console.log(submissionData);
-    axios.post(`${PAPATOO_BASEURL}${PAPATOO_V1_CLIENTS}/contact_form_submission`, formEntries)
+    // axios.post(`${PAPATOO_BASEURL}${PAPATOO_V1_CLIENTS}/contact_form_submission`, formEntries)
   }
 
   return (
