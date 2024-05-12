@@ -29,7 +29,11 @@ function Contact() {
   const sendFormData = (formEntries) => {
     const submissionData = { submission: formEntries }
     console.log(submissionData);
-    // axios.post(`${PAPATOO_BASEURL}${PAPATOO_V1_CLIENTS}/contact_form_submission`, formEntries)
+    axios.post(
+      `${PAPATOO_BASEURL}${PAPATOO_V1_CLIENTS}/contact_form_submission`,
+      formEntries
+    ).then(data => console.log(data))
+      .catch(error => console.log(error))
   }
 
   return (
