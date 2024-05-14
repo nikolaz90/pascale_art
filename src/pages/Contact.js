@@ -11,14 +11,17 @@ function Contact() {
     e.preventDefault()
     const submitTime = new Date()
     if (!isContactFormValid(e.target)) return;
-    const formData = new FormData(e.target)
-    formData.append('name', formData.get('email'))
-    formData.append('start_time', startTime.getTime())
-    formData.append('submit_time', submitTime.getTime())
-    formData.append('website', process.env.REACT_APP_WEBSITE_KEY)
-    formData.delete('companny')
-    const formEntries = Object.fromEntries(formData.entries())
-    sendFormData(formEntries)
+    const formData = {
+      submission: {
+        name: e.target.email.value,
+        email: e.target.email.value,
+        message: e.target.message.value,
+        start_time: startTime.getTime(),
+        submit_time: submitTime.getTime(),
+        website: process.env.REACT_APP_WEBSITE_KEY
+      }
+    }
+    sendFormData(formData)
     setIsSent(true)
     toggleIsSent()
   }
@@ -29,11 +32,10 @@ function Contact() {
     }, 10000)
   }
 
-  const sendFormData = (formEntries) => {
-    const submissionData = { submission: formEntries }
+  const sendFormData = (formData) => {
     axios.post(
       `${PAPATOO_BASEURL}${PAPATOO_V1_CLIENTS}/contact_form_submission`,
-      submissionData
+      formData
     ).then(data => console.log(data))
       .catch(error => console.log(error))
   }
