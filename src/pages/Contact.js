@@ -11,7 +11,7 @@ function Contact() {
     e.preventDefault()
     const submitTime = new Date()
     if (!isContactFormValid(e.target)) return;
-    const formData = {
+    const formData = { // not using new formData object until BE refactor - specifically for integer parsing
       submission: {
         name: e.target.email.value,
         email: e.target.email.value,
