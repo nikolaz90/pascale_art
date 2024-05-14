@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { PAPATOO_BASEURL, PAPATOO_V1_CLIENTS } from '../utils/constants/apiConfig';
+import { isContactFormValid } from '../utils/helpers/validators';
 
 function Contact() {
   const [isSent, setIsSent] = useState(false)
@@ -9,6 +10,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const submitTime = new Date()
+    if (!isContactFormValid(e.target)) return;
     const formData = new FormData(e.target)
     formData.append('name', formData.get('email'))
     formData.append('start_time', startTime.getTime())
@@ -46,6 +48,10 @@ function Contact() {
           <label className='form-input-label' htmlFor="contactSubject">add a subject</label>
           <textarea className='form-input form-message' id='contactMessage' type='text' name='message' placeholder='your message here' required />
           <label className='form-input-label' htmlFor='contactMessage'>your message</label>
+          <div id='companny'>
+            <label htmlFor='companny'><p>company</p></label>
+            <input type='text' name='companny' placeholder='Universal' autoComplete='nope' />
+          </div>
           <button type='submit' className='toggle-details-btn'>Send</button>
           {isSent && <span><small>message sent!</small></span>}
         </form>
