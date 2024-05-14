@@ -16,6 +16,7 @@ function Contact() {
     formData.append('start_time', startTime.getTime())
     formData.append('submit_time', submitTime.getTime())
     formData.append('website', process.env.REACT_APP_WEBSITE_KEY)
+    formData.delete('companny')
     const formEntries = Object.fromEntries(formData.entries())
     sendFormData(formEntries)
     setIsSent(true)
