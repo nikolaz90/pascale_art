@@ -21,7 +21,7 @@ function SingleItemPage() {
           <h2>{singleArtwork.title}</h2>
           <p><small>{singleArtwork.materials} {singleArtwork.dimensions !== 'n/a' ? `- ${singleArtwork.dimensions}` : ""}</small></p>
           <p>{singleArtwork.description}</p>
-          {/* <p><small>{singleArtwork.price}</small></p> */}
+          <p><small>{singleArtwork.price}</small></p>
         </div>
       </article>}
     </main>
