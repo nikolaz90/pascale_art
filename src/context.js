@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect, useReducer } from 'react'
 import reducer from './reducer';
-import { pamData } from './data/dummyData';
 
 const AppContext = React.createContext();
 
@@ -14,14 +13,12 @@ const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const [getPamPaintings, setGetPamPaintings] = useState(null)
-    // const oldApi = 'https://pam.herokuapp.com/api/v1/paintings_data' // round of QA before deleting 
     const ruboApiEndPoint = 'https://rubopop.hi.nikolaz.tech/api/v1/clients/pam/paintings'
     const fetchPamData = () => {
-        // fetch(ruboApiEndPoint)
-        //     .then((data) => data.json())
-        //     .then((response) => setGetPamPaintings(response))
-        //     .catch((error) => console.log(error))
-        setGetPamPaintings(pamData)
+        fetch(ruboApiEndPoint)
+            .then((data) => data.json())
+            .then((response) => setGetPamPaintings(response))
+            .catch((error) => console.log(error))
     }
 
     useEffect(() => {
