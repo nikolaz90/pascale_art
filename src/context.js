@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useReducer } from 'react'
 import reducer from './reducer';
 
+import { pamData } from './data/dummyData'
 const AppContext = React.createContext();
 
 const initialState = {
@@ -15,10 +16,11 @@ const AppProvider = ({ children }) => {
     const [getPamPaintings, setGetPamPaintings] = useState(null)
     const ruboApiEndPoint = 'https://rubopop.hi.nikolaz.tech/api/v1/clients/pam/paintings'
     const fetchPamData = () => {
-        fetch(ruboApiEndPoint)
-            .then((data) => data.json())
-            .then((response) => setGetPamPaintings(response))
-            .catch((error) => console.log(error))
+        // fetch(ruboApiEndPoint)
+        //     .then((data) => data.json())
+        //     .then((response) => setGetPamPaintings(response))
+        //     .catch((error) => console.log(error))
+        setGetPamPaintings(pamData)
     }
 
     useEffect(() => {

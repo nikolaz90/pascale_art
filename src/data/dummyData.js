@@ -32,7 +32,7 @@ export const pamData = {
         }
     ],
     "paintings": {
-        "isolations": [
+        "landscapes": [
             {
                 "year": "2022",
                 "price": "£570",
@@ -48,7 +48,7 @@ export const pamData = {
                 "image_url": "https://picsum.photos/200/300"
             }
         ],
-        "reflections": [
+        "cityscapes": [
             {
                 "year": "2020",
                 "price": "£420",
@@ -64,7 +64,7 @@ export const pamData = {
                 "image_url": "https://picsum.photos/200/300"
             }
         ],
-        "perceptions": [
+        "impressions": [
             {
                 "year": "2022",
                 "price": "£610",
