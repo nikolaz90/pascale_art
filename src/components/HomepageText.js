@@ -3,7 +3,7 @@ import { useGlobalContext } from '../context'
 
 function HomepageText() {
   const { loading, dataFromPam } = useGlobalContext()
-  const paintings = dataFromPam.paintings
+  const paintings = dataFromPam.paintings || ['landscapes', "cityscapes", "seascapes"]
   const categories = Object.keys(paintings)
 
   return (

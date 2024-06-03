@@ -8,10 +8,12 @@ function SingleItemPage() {
 
   const { loading, dataFromPam } = useGlobalContext()
 
-  const { paintings = { reflections: [], isolations: [], perceptions: [] }, screens, prints } = dataFromPam
-  const { reflections, isolations, perceptions } = paintings
+  const paintings = dataFromPam.paintings || []
+  const allArtwork = Object.values(paintings).reduce((acc, curr) => {
+    acc.push(...curr)
+    return acc;
+  }, [...dataFromPam.screens, ...dataFromPam.prints])
 
-  const allArtwork = [...reflections || [], ...isolations || [], ...perceptions || [], ...screens || [], ...prints || []]
   const singleArtwork = allArtwork.filter((item) => item.uuid === uuid)[0]
 
   useEffect(() => {

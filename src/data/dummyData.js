@@ -64,7 +64,7 @@ export const pamData = {
                 "image_url": "https://picsum.photos/200/300"
             }
         ],
-        "impressions": [
+        "seascapes": [
             {
                 "year": "2022",
                 "price": "£610",

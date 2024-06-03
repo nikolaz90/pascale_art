@@ -6,8 +6,8 @@ import { capitalize } from '../utils/helpers/textHelpers'
 function PaintingsDisplay() {
     const [isActive, setIsActive] = useState(0)
     const { loading, dataFromPam } = useGlobalContext()
-    const paintings = dataFromPam.paintings
 
+    const paintings = dataFromPam.paintings || []
     const categories = Object.keys(paintings)
 
     const handleClickActive = (displayNum) => {

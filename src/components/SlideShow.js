@@ -6,7 +6,7 @@ import { useGlobalContext } from '../context'
 function SlideShow() {
   const { loading, dataFromPam } = useGlobalContext();
 
-  const paintings = dataFromPam.paintings
+  const paintings = dataFromPam.paintings || []
   const slideShowPhotos = Object.values(paintings).reduce((acc, curr) => {
     acc.push(...curr)
     return acc;

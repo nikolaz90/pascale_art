@@ -4,7 +4,7 @@ import { useGlobalContext } from '../context'
 
 function OverView() {
     const { loading, dataFromPam } = useGlobalContext()
-    const paintings = dataFromPam.paintings
+    const paintings = dataFromPam.paintings || []
 
     const overviewPaintings = Object.values(paintings).reduce((acc, curr) => {
         acc.push(...curr)
