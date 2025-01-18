@@ -6,7 +6,7 @@ const AppContext = React.createContext();
 const initialState = {
     data: {},
     dataFromPam: {},
-    loading: false
+    loading: true
 }
 
 const AppProvider = ({ children }) => {
