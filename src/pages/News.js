@@ -22,6 +22,26 @@ function News() {
         {loading ? <h3>Loading</h3> :
           <>
             <article className='news-article-container'>
+              <div className='news-article-info-full-width mb-1'>
+                <h4>Recent exhibitions</h4>
+                <p className='news-article-para'>
+                  <i>December 2023</i> <br />
+                  I was invited in December 2023 to exhibit at the Brewin Dolphin Christmas
+                  Exhibition with other local professional artists.  <br /> <hr />
+                  <i>April 2024</i> <br />
+                  This exhibition was followed by a solo exhibition of my work at the White Horse
+                  Gallery In April 2024. <br /> <hr />
+                  <i>July 2024</i> <br />
+                  Marlborough Open Studios July 2024 brought many visitors to visit me and the
+                  photographer Richard Draper in Avebury where new works were exhibited. <br /> <hr />
+                  <i>October - November 2024 </i> <br />
+                  Two of my paintings were selected to feature in the annual Oexmann Art Award
+                  exhibition at Devizes Museum.
+                  I thank everyone for their invaluable support in my work!
+                </p>
+              </div>
+            </article>
+            <article className='news-article-container'>
               <div className='news-article-media'>
                 <img src={mos2024} className='artist-img' alt='Montsalès galerie exhibition' />
               </div>
