@@ -9,6 +9,7 @@ import mos2024 from '../photos/news/mos_2024.jpg'
 function News() {
   const { loading } = useGlobalContext()
   const videoLink = "//videos.ctfassets.net/fol21n7kmioh/2Qga1iOJGIG5XN1hgn4Ajm/0ae9df0b5385cb1fcf698679d59f13ad/VID-20220702-WA0011.mp4"
+  const videoLink2 = "//videos.ctfassets.net/fol21n7kmioh/5xXVqMtOjQhqyn7YX7xGFC/83f6cf15b381207dac5632154d788f94/VID-20250529-WA0008.mp4.crdownload"
   const mosLink = "https://www.marlboroughopenstudios.co.uk/"
   const tomLink = "https://tomhiscocks.co.uk/"
   const cmafLink = "https://www.cmaf.org.uk/"
@@ -21,6 +22,28 @@ function News() {
         <h2 className='page-title'>News</h2>
         {loading ? <h3>Loading</h3> :
           <>
+            <article className='news-article-container'>
+              <div className='news-article-info'>
+                <h4>Chelsea Flower Show 2025</h4>
+                <p className='news-article-para'>
+                  I was delighted and honoured to be invited by well known sculptor Tom Hiscocks to paint
+                  two murals for his stand at this year’s show.
+                  Working with the Sea Life Trust, Tom’s stand offered a sea garden with sea plants from
+                  the Gabb estate in Shropshire with his sculptures of sharks, dolphins and other beautiful
+                  works swimming in and around the plantings.
+                  The subject for the murals had to complement the garden and I was inspired by the work
+                  of Victor Pasmore (1908-1998) - see the video.
+                  It was an incredible week! Thank you, Tom
+                </p>
+              </div>
+              <div className='news-article-media'>
+                <video width='380' height='250' controls>
+                  <source src={videoLink2} />
+                  <p>Woops... Looks like something went wrong with the video player.
+                    Try this <a href={videoLink2} target='_blank' rel="noreferrer">link</a> to watch the video.</p>
+                </video>
+              </div>
+            </article>
             <article className='news-article-container'>
               <div className='news-article-info-full-width mb-1'>
                 <h4>Recent exhibitions</h4>
